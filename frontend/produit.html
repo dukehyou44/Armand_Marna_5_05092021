@@ -5,13 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <meta name="description" content="Orinoco est un site de e-commerce qui propose une large gamme de produit personnalisable.">
-        <link rel="stylesheet" type="text/css" href="home.css">
+        <link rel="stylesheet" type="text/css" href="./home.css">
         <title>Fiche produit - Orinoco</title>
     </head>
     <body>
         <header>
-            <a href="">
-                <img src="" alt="logo">
+            <a href="index.html">
+                <p>Orinoco</p>
             </a>
             <a href="">    
                 <p>Panier</p>
@@ -19,7 +19,21 @@
         </header>
         <main>
             <div class=".container">
-
+                    <img src="" alt="image produit" id='image'>
+                    <div class="carte infos">
+                        <div class="carte titre et prix">
+                            <h1 id="titre"></h2>
+                            <p id="prix"></p>
+                        </div>
+                        <div class="carte description">
+                            <p id="description"></p>
+                        </div>
+                    </div>
+                    <div id="vernis">
+                        <select id="choix">Choissisez votre vernis
+                        </select>
+                    </div>
+                    <button id="btn">Ajouter au Panier</button>
             </div>
         </main>
     </body>

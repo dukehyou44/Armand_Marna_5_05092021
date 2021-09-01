@@ -1,0 +1,7 @@
+body {
+    display: flex;
+}
+img {
+    object-fit: cover;
+    width: 25%;
+}

@@ -23,6 +23,7 @@ function getArticles() {
 function displayArticles() {
     document.querySelector(".container").innerHTML += 
     `<div class>
+    <a href="./produit.html?_id=${article._id}"
         <div class="carte article">
             <img src="${article.imageUrl}" alt="${article.name}">
         </div>
@@ -35,5 +36,6 @@ function displayArticles() {
                 <p>${article.description}</p>
             </div>
         </div>
+        </a>
     </div>`
 }    
