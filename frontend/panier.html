@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <meta name="description" content="Orinoco est un site de e-commerce qui propose une large gamme de produit personnalisable.">
+        <link rel="stylesheet" type="text/css" href="./home.css">
+        <title>Panier - Orinoco</title>
+    </head>
+    <body>
+        <header>
+            <a href="index.html">
+                <p>Orinoco</p>
+            </a>
+            <a href="">    
+                <p>Panier</p>
+            </a>
+        </header>
+        <main>
+            <div class="container">
+                <div id="tableau">
+                <table>
+                    <thead>
+                      <tr>
+                        <th>Produit</th>
+                        <th>Vernis</th>
+                        <th>Prix</th>
+                      </tr>
+                    </thead>
+                    <tbody id="articleDuPanier">
+                    </tbody>
+                    <tfoot>
+                        <tr id="prixTotale">
+                        </tr>
+                        <tr>
+                          <th><button id="vider">Vider le panier</button></th>
+                        </tr>
+                    </tfoot>
+                    </table>
+                    </div>
+                    <div>
+                        <form class="form">
+                        <div>
+                          <label for="firstname" class="label">Prénom</label>
+                          <input type="text" id="firstname" class="input" required/>
+                        </div>
+                        <div>
+                          <label for="lastname" class="label">Nom</label>
+                          <input type="text" id="lastname" class="input" required/>
+                        </div>
+                        <div>
+                          <label for="email" class="label">Adresse e-mail</label>
+                          <input type="email" id="email" class="input" required/>
+                        </div>
+                        <div>
+                          <label for="adress" class="label">Adresse</label>
+                          <input type="text" id="adress" class="input" required/>
+                        </div>
+                        <div>
+                          <label for="city" class="label">Ville</label>
+                          <input type="text" id="city" class="input" required/>
+                        </div>
+                        </form>
+                        <button id="validerPanier">Valider le panier</button>
+                      </div>
+            </div>
+        </main>
+    </body>
+    <script src="panier.js"></script>
+    </html>

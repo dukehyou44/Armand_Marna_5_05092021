@@ -41,13 +41,11 @@ function varnishChoice(article) {
    
 
     const ajoutPanier = document.getElementById("btn");
-    console.log(ajoutPanier);
 
     ajoutPanier.addEventListener("click", (event) =>{
         event.preventDefault();
         const optionVernis = document.getElementById("choix");
         const choixUser = optionVernis.value;
-        console.log(choixUser);
         let optionArticle = {
             id : article._id,
             nom : article.name,
@@ -57,20 +55,20 @@ function varnishChoice(article) {
             choixUser,
 
         }
-        console.log(optionArticle);
 
         let articleAjouterAuPanier = JSON.parse(localStorage.getItem("article"));
-        console.log(articleAjouterAuPanier);
+
+        const ajoutDansLocalStorage = () => {
+            articleAjouterAuPanier.push(optionArticle);
+            localStorage.setItem("article",JSON.stringify(articleAjouterAuPanier));
+        };
 
         if(articleAjouterAuPanier){
-            articleAjouterAuPanier.push(optionArticle);
-            localStorage.setItem("article",JSON.stringify(articleAjouterAuPanier));
-            console.log(articleAjouterAuPanier);
+            ajoutDansLocalStorage();
         }else{
             articleAjouterAuPanier = [];
-            articleAjouterAuPanier.push(optionArticle);
-            localStorage.setItem("article",JSON.stringify(articleAjouterAuPanier));
-            console.log(articleAjouterAuPanier);
+            ajoutDansLocalStorage();
+            
         }
     });
 
