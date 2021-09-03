@@ -4,28 +4,43 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
         <meta name="description" content="Orinoco est un site de e-commerce qui propose une large gamme de produit personnalisable.">
+        <script src="https://kit.fontawesome.com/3bbb520138.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Glory:wght@500&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="./home.css">
         <title>Panier - Orinoco</title>
     </head>
-    <body>
-        <header>
-            <a href="index.html">
-                <p>Orinoco</p>
-            </a>
-            <a href="">    
-                <p>Panier</p>
-            </a>
-        </header>
+    <body class="bg-secondary">
+      <header>
+        <nav class="navbar navbar-expend bg-dark navbar-dark">
+          <a class="navbar-brand" href="index.html">ORINOCO
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                   <a class="nav-link" href="index.html">Accueil</a>
+                </li>
+                <li class="nav-item active">
+                   <a class="nav-link" href="panier.html">
+                      <i class="fas fa-shopping-cart"></i>
+                   </a>
+                </li>
+            </ul>
+          </a>              
+       </nav>    
+    </header>
         <main>
             <div class="container">
                 <div id="tableau">
-                <table>
+                <table class="table table-bordered table-striped table-secondary">
                     <thead>
                       <tr>
-                        <th>Produit</th>
-                        <th>Vernis</th>
-                        <th>Prix</th>
+                        <th class="font-weight-bold" scope="col">Produit</th>
+                        <th class="font-weight-bold" scope="col">Vernis</th>
+                        <th class="font-weight-bold" scope="col">Prix</th>
                       </tr>
                     </thead>
                     <tbody id="articleDuPanier">
@@ -33,36 +48,37 @@
                     <tfoot>
                         <tr id="prixTotale">
                         </tr>
-                        <tr>
-                          <th><button id="vider">Vider le panier</button></th>
-                        </tr>
                     </tfoot>
                     </table>
                     </div>
                     <div>
                         <form class="form">
-                        <div>
-                          <label for="firstname" class="label">Prénom</label>
+                         <div class="form-row"> 
+                        <div class="form-group col-md-6">
+                          <label for="firstname" class="text-white label">Prénom</label>
                           <input type="text" id="firstname" class="input" required/>
                         </div>
-                        <div>
-                          <label for="lastname" class="label">Nom</label>
+                        <div class="form-group col-md-6">
+                          <label for="lastname" class="text-white label">Nom</label>
                           <input type="text" id="lastname" class="input" required/>
                         </div>
-                        <div>
-                          <label for="email" class="label">Adresse e-mail</label>
+                         </div>
+                        <div class="form-group">
+                          <label for="email" class="text-white label">Adresse e-mail</label>
                           <input type="email" id="email" class="input" required/>
                         </div>
-                        <div>
-                          <label for="adress" class="label">Adresse</label>
+                        <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="adress" class="text-white label">Adresse</label>
                           <input type="text" id="adress" class="input" required/>
                         </div>
-                        <div>
-                          <label for="city" class="label">Ville</label>
+                        <div class="form-group col-md-6">
+                          <label for="city" class="text-white label">Ville</label>
                           <input type="text" id="city" class="input" required/>
                         </div>
+                        </div>
                         </form>
-                        <button id="validerPanier">Valider le panier</button>
+                        <a class="btn btn-primary text-white" style="margin-bottom: 25px;" id="validerPanier">Valider le panier</a>
                       </div>
             </div>
         </main>

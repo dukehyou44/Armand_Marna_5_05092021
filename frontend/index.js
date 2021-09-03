@@ -20,21 +20,19 @@ function getArticles() {
 }
 
 function displayArticles() {
-    document.querySelector(".container").innerHTML += 
-    `<div class>
-    <a href="./produit.html?_id=${article._id}"
-        <div class="carte article">
-            <img src="${article.imageUrl}" alt="${article.name}">
-        </div>
-        <div class="carte infos">
-            <div class="carte titre et prix">
-                <h2>${article.name}</h2>
-                <p>${article.price / 100}.00 €</p>
-            </div>
-            <div class="carte description">
-                <p>${article.description}</p>
-            </div>
-        </div>
-        </a>
-    </div>`
+    document.querySelector(".containe").innerHTML += 
+    `
+    <div class="col-xl-4" style="margin-bottom:30px;">
+    <div class="card bg-secondary">
+    <a href="./produit.html?_id=${article._id}">
+            <img class="card-img-top img-fluid" src="${article.imageUrl}" alt="${article.name}">
+            </a>
+        <div class="card-body bg-dark">
+                <h2 class="card-title text-white">${article.name}</h2>
+                <h6 class="card-subtitle text-white">${article.price / 100}.00 €</h3>
+                <p class="card-text text-white">${article.description}</p>
+                <a href="./produit.html?_id=${article._id}" class="btn btn-primary">Voir le produit</a>
+        </div>      
+    </div>
+    </div>`;
 }    

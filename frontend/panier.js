@@ -6,7 +6,7 @@ const tableauPanier = document.getElementById("tableau");
 if(articleAjouterAuPanier === null){
     const panierVide = `
     <div class="panier vide">
-    <div>Votre panier est vide</div>
+    <div class="text-white" style="display: flex; margin-top: 40px; margin-bottom:40px; align-items:center; flex-direction: column; font-size:25px;">Votre panier est vide. <a href=index.html class="text-white">Cliquez-ici pour à l'accueil</a></div>
     </div>
     `;
     tableauPanier.innerHTML = panierVide;
@@ -17,13 +17,13 @@ if(articleAjouterAuPanier === null){
     for(let i = 0; i < articleAjouterAuPanier.length; i++){
         
         articlePanier.innerHTML += `<tr>
-        <th>${articleAjouterAuPanier[i].nom}</th>
-        <th>${articleAjouterAuPanier[i].choixUser}</th>
-        <th>${articleAjouterAuPanier[i].prix} €</th>
+        <th class="font-weight-normal">${articleAjouterAuPanier[i].nom}</th>
+        <th class="font-weight-normal">${articleAjouterAuPanier[i].choixUser}</th>
+        <th class="font-weight-normal">${articleAjouterAuPanier[i].prix} €</th>
       </tr>`
     }
 
-}
+
 
 let prixTotale = [];
 
@@ -32,10 +32,14 @@ for(let n = 0; n < articleAjouterAuPanier.length; n++){
 }
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
 const prixTotaleFinal = prixTotale.reduce(reducer,0);
+console.log(prixTotaleFinal);
+localStorage.setItem("prixTotal",prixTotaleFinal);
 
 document.getElementById("prixTotale").innerHTML += `
 <th>Prix total</th>
-<th>${prixTotaleFinal} €</th>`;
+<th>${prixTotaleFinal} €</th>
+<th><a class="btn btn-primary text-white" id="vider">Vider le panier</a></th>`;
+
 
 
 
@@ -52,7 +56,7 @@ btnViderPanier.addEventListener("click", (event) => {
 
 
 
-
+}
 
 
 document.getElementById("validerPanier").addEventListener("click", function(){

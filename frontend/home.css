@@ -1,7 +1,32 @@
-body {
-    display: flex;
-}
-img {
+.card-img-top {
     object-fit: cover;
-    width: 25%;
+    border-radius: 15px 15px 0px 0px;
+}
+.card {
+    border-radius: 15px;
+}
+.card-body {
+    border-radius: 0px 0px 15px 15px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Glory', sans-serif;
+}
+.choixUseretPanier {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+}
+h2 {
+    font-size: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+.form-row {
+    display: flex;
 }
