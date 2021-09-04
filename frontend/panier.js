@@ -3,14 +3,22 @@ let articleAjouterAuPanier = JSON.parse(localStorage.getItem("article"));
 
 const tableauPanier = document.getElementById("tableau");
 
+// Action si le panier est vide.
+
 if(articleAjouterAuPanier === null){
     const panierVide = `
     <div class="panier vide">
-    <div class="text-white" style="display: flex; margin-top: 40px; margin-bottom:40px; align-items:center; flex-direction: column; font-size:25px;">Votre panier est vide. <a href=index.html class="text-white">Cliquez-ici pour à l'accueil</a></div>
+    <div class="text-white" style="display: flex; margin-top: 40px; margin-bottom:40px; align-items:center; flex-direction: column; font-size:25px;">Votre panier est vide. <a href=index.html class="text-white">Cliquez-ici pour aller à l'accueil</a></div>
     </div>
     `;
     tableauPanier.innerHTML = panierVide;
+
+// Si le panier est rempli on va...
+
 }else{
+
+// recuperer les infos importantes pour notre tableau recapitulatif
+
     var affichageArticlePanier = [];
     const articlePanier = document.getElementById("articleDuPanier"); 
 
@@ -24,7 +32,7 @@ if(articleAjouterAuPanier === null){
     }
 
 
-
+//  recuperer et enregistrer le prix total dans le local storage
 let prixTotale = [];
 
 for(let n = 0; n < articleAjouterAuPanier.length; n++){
@@ -41,13 +49,13 @@ document.getElementById("prixTotale").innerHTML += `
 <th><a class="btn btn-primary text-white" id="vider">Vider le panier</a></th>`;
 
 
-
+// Ecouter le bouton vider le panier et supprimer les articles du local storage
 
 const btnViderPanier = document.getElementById("vider");
 
 btnViderPanier.addEventListener("click", (event) => {
     event.preventDefault;
-    localStorage.removeItem("article");
+    localStorage.clear();
     alert("Le panier est désormais vide");
     window.location.href = "index.html";
 });
@@ -58,6 +66,7 @@ btnViderPanier.addEventListener("click", (event) => {
 
 }
 
+// Ecouter le btn "valider le panier", puis recuperer les infos du formulaire et faire une requete POST
 
 document.getElementById("validerPanier").addEventListener("click", function(){
     var valide = true;

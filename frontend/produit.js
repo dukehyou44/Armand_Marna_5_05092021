@@ -1,12 +1,18 @@
+// Fonction de base, auto-invoquer au chargement de la page. 
+
 (async function(){
     const articleId = getArticleId()
     const article = await getArticle(articleId)
     displayArticle(article)
 })()
 
+// Fonction qui recuperer l'ID des articles.
+
 function getArticleId() {
     return new URL(location.href).searchParams.get('_id')
 }
+
+// Fonction qui recupere les articles selon leurs ID.
 
 function getArticle(articleId){
     return fetch(`http://localhost:3000/api/furniture/${articleId}`)
@@ -21,6 +27,8 @@ function getArticle(articleId){
     })
 }
 
+// Fonction qui affiche les articles.
+
 function displayArticle(article) {
   document.getElementById('image').src = article.imageUrl
   document.getElementById('image').alt = article.name
@@ -31,6 +39,7 @@ function displayArticle(article) {
   varnishChoice(article)
 }
 
+// Fonction qui va recuperer les choix de vernis et permettre leurs affichage.
 
 function varnishChoice(article) {
     const choixVernis = document.getElementById("choix");
@@ -38,7 +47,7 @@ function varnishChoice(article) {
         choixVernis.innerHTML += `<option value="${varnish}">${varnish}</option>`;
     }
 
-   
+//    Ajout du listener pour ecouter le bouton Ajout au panier.
 
     const ajoutPanier = document.getElementById("btn");
 
@@ -57,6 +66,8 @@ function varnishChoice(article) {
         }
 
         let articleAjouterAuPanier = JSON.parse(localStorage.getItem("article"));
+
+// Ajout du panier de le local storage.
 
         const ajoutDansLocalStorage = () => {
             articleAjouterAuPanier.push(optionArticle);

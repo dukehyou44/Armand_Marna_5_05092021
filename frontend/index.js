@@ -1,3 +1,5 @@
+// Fonction de base, auto-invoquer au chargement de la page. 
+
 (async function(){
     const articles = await getArticles()
     
@@ -5,6 +7,8 @@
       displayArticles(articles)
     }
 })()
+
+// Fonction qui permet de recuperer les articles.
 
 function getArticles() {
     return fetch("http://localhost:3000/api/furniture")
@@ -18,6 +22,8 @@ function getArticles() {
         console.log("erreur : " + err)
     })
 }
+
+// Fonction qui affiche les articles recuperer plus tôt.
 
 function displayArticles() {
     document.querySelector(".containe").innerHTML += 
