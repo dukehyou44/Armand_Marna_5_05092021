@@ -55,12 +55,15 @@ function varnishChoice(article) {
         event.preventDefault();
         const optionVernis = document.getElementById("choix");
         const choixUser = optionVernis.value;
+        const quantite = document.getElementById("quantite");
+        const quantiteChoisi = quantite.value
         let optionArticle = {
             id : article._id,
             nom : article.name,
             prix : article.price / 100,
             description : article.description,
             image : article.imageUrl,
+            quantiteChoisi,
             choixUser,
 
         }
@@ -81,6 +84,8 @@ function varnishChoice(article) {
             ajoutDansLocalStorage();
             
         }
+        alert("Votre produit a été ajouté au panier.");
+        console.log(articleAjouterAuPanier);
     });
 
 }

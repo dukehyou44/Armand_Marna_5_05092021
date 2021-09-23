@@ -16,8 +16,14 @@ body {
 .choixUseretPanier {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
     padding-bottom: 15px;
+}
+.select-choix {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 h2 {
     font-size: 25px;

@@ -27,7 +27,9 @@ if(articleAjouterAuPanier === null){
         articlePanier.innerHTML += `<tr>
         <th class="font-weight-normal">${articleAjouterAuPanier[i].nom}</th>
         <th class="font-weight-normal">${articleAjouterAuPanier[i].choixUser}</th>
+        <th class="font-weight-normal">${articleAjouterAuPanier[i].quantiteChoisi}</th>
         <th class="font-weight-normal">${articleAjouterAuPanier[i].prix} €</th>
+        <th class="font-weight-normal">${articleAjouterAuPanier[i].prix*articleAjouterAuPanier[i].quantiteChoisi} €</th>
       </tr>`
     }
 
@@ -36,17 +38,17 @@ if(articleAjouterAuPanier === null){
 let prixTotale = [];
 
 for(let n = 0; n < articleAjouterAuPanier.length; n++){
-    prixTotale.push(articleAjouterAuPanier[n].prix);
+    prixTotale.push(articleAjouterAuPanier[n].prix*articleAjouterAuPanier[n].quantiteChoisi);
 }
+console.log(prixTotale);
 const reducer = (accumulator, currentValue) => accumulator + currentValue;
 const prixTotaleFinal = prixTotale.reduce(reducer,0);
 console.log(prixTotaleFinal);
 localStorage.setItem("prixTotal",prixTotaleFinal);
 
 document.getElementById("prixTotale").innerHTML += `
-<th>Prix total</th>
-<th>${prixTotaleFinal} €</th>
-<th><a class="btn btn-primary text-white" id="vider">Vider le panier</a></th>`;
+<th colspan=4>Prix total</th>
+<th>${prixTotaleFinal} €</th>`;
 
 
 // Ecouter le bouton vider le panier et supprimer les articles du local storage
