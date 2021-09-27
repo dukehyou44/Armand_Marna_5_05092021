@@ -2,7 +2,7 @@
 
 let order = JSON.parse(localStorage.getItem("order"))
 console.log(order.orderId);
-let prix = localStorage.getItem("prixTotal")
+let prix = localStorage.getItem("prixTotal");
 
 document.getElementById("orderId").innerHTML += `
 <p class="text-white">Le prix total est de ${prix} €.</p>

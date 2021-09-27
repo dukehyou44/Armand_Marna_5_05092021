@@ -46,9 +46,10 @@ const prixTotaleFinal = prixTotale.reduce(reducer,0);
 console.log(prixTotaleFinal);
 localStorage.setItem("prixTotal",prixTotaleFinal);
 
-document.getElementById("prixTotale").innerHTML += `
+document.getElementById("prixTotale").innerHTML += `<tr>
 <th colspan=4>Prix total</th>
-<th>${prixTotaleFinal} €</th>`;
+<th>${prixTotaleFinal} €</th>
+</tr>`;
 
 
 // Ecouter le bouton vider le panier et supprimer les articles du local storage

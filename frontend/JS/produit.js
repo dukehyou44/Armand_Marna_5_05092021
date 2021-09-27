@@ -4,12 +4,12 @@
     const articleId = getArticleId()
     const article = await getArticle(articleId)
     displayArticle(article)
-})()
+})();
 
 // Fonction qui recuperer l'ID des articles.
 
 function getArticleId() {
-    return new URL(location.href).searchParams.get('_id')
+    return new URL(location.href).searchParams.get('_id');
 }
 
 // Fonction qui recupere les articles selon leurs ID.
@@ -24,8 +24,8 @@ function getArticle(articleId){
     })
     .catch(function(err) {
         console.log("erreur : " + err)
-    })
-}
+    });
+};
 
 // Fonction qui affiche les articles.
 
@@ -66,7 +66,7 @@ function varnishChoice(article) {
             quantiteChoisi,
             choixUser,
 
-        }
+        };
 
         let articleAjouterAuPanier = JSON.parse(localStorage.getItem("article"));
 
